@@ -1,0 +1,252 @@
+/* check.html */
+.header {
+    min-height: 80px;
+    height: 80px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color:yellowgreen;
+    display: table;
+}
+
+.header_text {
+    font-weight: bold; 
+    font-size: 30px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: white;
+}
+
+.question_box{
+    overflow-y: auto;
+    background: white;
+    position: fixed;
+    top: 80px;
+    bottom: 55px;
+    width: 100%;
+}
+
+#question{
+    width:90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.question p{
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+[type=radiogroup] span {
+    font-size: 20px;
+    font-weight: bold;
+}
+input[type=radio]{
+    margin-left: 3%; 
+    margin-right: 3%;
+    margin-bottom: 20px;
+    width:40px;
+    height:40px;            
+}
+
+ /*radio = 체크용 원, 아래의 주석은 각 원 크기 조절 코드*/
+/* input[type=radio][value="1"]{
+    width:50px;
+    height:50px; 
+}
+input[type=radio][value="2"]{
+    width:40px;
+    height:40px; 
+}
+input[type=radio][value="3"]{
+    width:30px;
+    height:30px; 
+}
+input[type=radio][value="4"]{
+    width:40px;
+    height:40px; 
+}
+input[type=radio][value="5"]{
+    width:50px;
+    height:50px;
+} */
+
+
+
+[type=radiogroup]{
+    /* margin-left: 50px;  */
+    margin-bottom: 50px;
+    border-bottom: 1px solid lightgray;
+    }
+
+#button {
+    margin-top: 20px;
+    width: 100%;
+    height: 50px;
+    font-size: large;
+}
+
+/* main.html */
+.footer {
+    min-height: 50px;
+    height: 50px;
+    /* overflow: hidden; */
+    /* position: fixed; */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color:lightslategray;
+    display: table;
+}
+
+.footer_text {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 10px;
+    color:white;
+}
+
+.footer_u {
+    min-height: 250px;
+    height: 250px;
+    overflow: auto;
+    /* position: fixed; */
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    background-color:yellowgreen;
+    display: table;
+    table-layout: fixed;
+}
+.footer_u_left{
+    display: table-cell;
+    vertical-align: middle;
+} 
+.footer_ulu {
+    display: table-cell;
+    vertical-align: middle;
+    font-size :30px;
+    color: white;
+    margin-left: 5%;
+    display: flex;
+}
+.footer_uld {
+    display: table-cell;
+    vertical-align: middle;
+    font-size :20px;
+    color: white;
+    margin-left: 10%;
+    display: flex;
+}
+
+
+.footer_u_right {
+    display: table-cell;
+    vertical-align: middle;
+    margin-left: 10%;
+}
+.footer_uru {
+    display: table-cell;
+    vertical-align: middle;
+    text-align:right;
+    font-size :30px;
+    color:white;
+    display: flex;
+    text-align: right;
+}
+.footer_urd {
+    display: table-cell;
+    vertical-align: middle;
+    /* text-align:right; */
+    text-align: left;
+    font-size :20px;
+    color: white; 
+    display: flex;
+}
+
+.enter {
+    display: table;
+    margin: auto;
+    margin-top: 25%;
+}
+.enter_box a{
+    display: table-cell;
+    vertical-align: middle;
+    height: 80px;
+    width: 140px;
+    text-align: center;
+    border-radius: 30px;
+    background-color:lightslategrey;
+    font-size :15px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white; 
+}
+
+.enter a:hover{
+    height: 80px;
+    width: 140px;
+    background-color: yellowgreen;
+    color: black;
+}
+
+
+
+
+/* result */
+.mental_immunity_level{
+    margin-top: 130px;
+    height: 450px;
+    font-size: 25px;
+    text-align: center;
+    /* vertical-align: middle; */
+    /* position: table; */
+}
+
+.MIL p{
+    width: 80%;
+    font-size: 18px;
+    /* text-align: center; */
+    margin: auto;
+}
+
+.img_box {
+    display: table;
+    vertical-align: middle;
+}
+.img_box_left img{
+    display: table-cell;
+    float: left;
+    width: 50%;
+}
+
+.img_box_right img{
+    display: table-cell;
+    float: right;
+    width: 50%;
+}
+.youtube_box {
+    display: table;
+    height: 300px;
+    border: #ffffff;
+}
+
+.body{
+    overflow: hidden;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center center;
+    margin-top: 80px;
+}
+
+iframe{
+    width: 50%;
+    height: 70%;
+}

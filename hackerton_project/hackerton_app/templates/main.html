@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID19 - 마음방역 솔루션</title>
+    <link rel="stylesheet" href="{% static 'main.css'%}">
+</head>
+<body class="body" background = "https://publy.imgix.net/images/2019/09/05/1567668118_DkdugLdAvK3Zr5ABQ98VOvYsqiQU1dfWPOO8ASkI.jpeg?fm=pjpg" >
+    <div class="covid_stress_main">
+        <div class="header">
+            <div class="header_text">
+                COVID19 - 마음방역 솔루션
+            </div>
+        </div>
+        <div class="enter">
+            <div class="enter_box" style="height:300px;">
+                <a href="{% url 'input' %}">자가진단 입장하기</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

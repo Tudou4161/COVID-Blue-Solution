@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID19 - 마음방역 솔루션</title>
+    <link rel="stylesheet" href="{% static 'main.css'%}">
+</head>
+<body>
+    <div class="test_questions_box">
+        <div class="header">
+            <div class="header_text">
+                COVID19 - 마음방역 솔루션
+            </div>
+        </div>
+        <div class="question_box">
+            <form action="{% url 'predict' %}" id="question" method="POST">
+                {% csrf_token %}
+                <div class="question">
+                    <p>질문 1 : 코로나로 인한 삶의 변화에 억울함이나 분노를 느낀 적이 있으십니까?</p>
+                </div>
+                <div class="Q_1" type="radiogroup">
+                    <br>
+                    <span>전혀 아니다.</span>
+                    <input type="radio" value=1 name="1"/>
+                    <input type="radio" value=2 name="1"/>
+                    <input type="radio" value=3 name="1" checked/>
+                    <input type="radio" value=4 name="1"/>
+                    <input type="radio" value=5 name="1"/>
+                    <span>매우 그렇다.</span>
+                </div>
+                <div class="question">
+                    <p>질문 2 : 사회적 거리 두기 혹은 코로나바이러스로 인하여, 주변 사람들과 심리적으로 멀어졌다고 생각하십니까?</p>   
+                </div>
+                <div class="Q_2" type="radiogroup">
+                    <br>
+                    <span>전혀 아니다.</span>
+                    <input type="radio" value=1 name="2"/>
+                    <input type="radio" value=2 name="2"/>
+                    <input type="radio" value=3 name="2" checked/>
+                    <input type="radio" value=4 name="2"/>
+                    <input type="radio" value=5 name="2"/>
+                    <span>매우 그렇다.</span>
+                </div>
+
+                <div class="question">
+                    <p>질문 3 : 코로나로 인해 준비하던 일이 틀어져 상실감을 경험해보셨습니까?</p>   
+                </div>
+                <div class="Q_3" type="radiogroup">
+                    <br>
+                    <span>전혀 아니다.</span>
+                    <input type="radio" value=1 name="3"/>
+                    <input type="radio" value=2 name="3"/>
+                    <input type="radio" value=3 name="3" checked/>
+                    <input type="radio" value=4 name="3"/>
+                    <input type="radio" value=5 name="3"/>
+                    <span>매우 그렇다.</span>
+                </div>
+
+                <div class="question">
+                    <p>질문 4 : 코로나바이러스로 인해, 주요 감염국가나 지역 사람들에 대한 혐오감을 느껴본 적이 있으십니까?</p>   
+                </div>
+                <div class="Q_4" type="radiogroup">
+                    <br>
+                    <span>전혀 아니다.</span>
+                    <input type="radio" value=1 name="4"/>
+                    <input type="radio" value=2 name="4"/>
+                    <input type="radio" value=3 name="4" checked/>
+                    <input type="radio" value=4 name="4"/>
+                    <input type="radio" value=5 name="4"/>
+                    <span>매우 그렇다.</span>
+                </div>
+
+                <div class="question">
+                    <p>질문 5 : 최근 집단감염 발생 사례로 인해, 특정 종교에 대해 거부감을 갖게 되셨습니까?</p>   
+                </div>
+                <div class="Q_5" type="radiogroup">
+                    <br>
+                    <span>전혀 아니다.</span>
+                    <input type="radio" value=1 name="5"/>
+                    <input type="radio" value=2 name="5"/>
+                    <input type="radio" value=3 name="5" checked/>
+                    <input type="radio" value=4 name="5"/>
+                    <input type="radio" value=5 name="5"/>
+                    <span>매우 그렇다.</span>
+                </div>
+
+                <div class="question">
+                    <p>질문 6 : 코로나바이러스로 인해, 한국에 거주하는 외국인에 대해 혐오감을 느껴본 적이 있으십니까?</p>   
+                </div>
+                <div class="Q_6" type="radiogroup">
+                    <br>
+                    <span>전혀 아니다.</span>
+                    <input type="radio" value=1 name="6"/>
+                    <input type="radio" value=2 name="6"/>
+                    <input type="radio" value=3 name="6" checked/>
+                    <input type="radio" value=4 name="6"/>
+                    <input type="radio" value=5 name="6"/>
+                    <span>매우 그렇다.</span>
+                </div>
+
+                <div class="question">
+                    <p>질문 7 : 코로나바이러스 때문에 신경이 예민해져 사소한 일에도 짜증을 내본 적이 있으십니까?</p>   
+                </div>
+                <div class="Q_7" type="radiogroup">
+                    <br>
+                    <span>전혀 아니다.</span>
+                    <input type="radio" value=1 name="7"/>
+                    <input type="radio" value=2 name="7"/>
+                    <input type="radio" value=3 name="7" checked/>
+                    <input type="radio" value=4 name="7"/>
+                    <input type="radio" value=5 name="7"/>
+                    <span>매우 그렇다.</span>
+                </div>
+
+                <div class="question">
+                    <p>질문 8 : 경제활동 중단(매출 하락, 폐업, 실업 등)으로 인해, 분노나 공허함을 느낀 적이 있으십니까?</p>   
+                </div>
+                <div class="Q_8" type="radiogroup">
+                    <br>
+                    <span>전혀 아니다.</span>
+                    <input type="radio" value=1 name="8"/>
+                    <input type="radio" value=2 name="8"/>
+                    <input type="radio" value=3 name="8" checked/>
+                    <input type="radio" value=4 name="8"/>
+                    <input type="radio" value=5 name="8"/>
+                    <span>매우 그렇다.</span>
+                </div>
+
+                <div class="question">
+                    <p>질문 9 : 대중교통 시설에서 마스크를 끼지 않고 탑승하는 사람을 보고 불결함을 느낀 적이 있으십니까?</p>   
+                </div>
+                <div class="Q_9" type="radiogroup">
+                    <br>
+                    <span>전혀 아니다.</span>
+                    <input type="radio" value=1 name="9"/>
+                    <input type="radio" value=2 name="9"/>
+                    <input type="radio" value=3 name="9" checked/>
+                    <input type="radio" value=4 name="9"/>
+                    <input type="radio" value=5 name="9"/>
+                    <span>매우 그렇다.</span>
+                </div>
+
+                <div class="question">
+                    <p>질문 10 : 경미한 감기 증상(가벼운 기침, 가래, 재채기 등)으로 인해 불안감을 느낀 적이 있으십니까?</p>   
+                </div>
+                <div class="Q_10" type="radiogroup">
+                    <br>
+                    <span>전혀 아니다.</span>
+                    <input type="radio" value=1 name="10"/>
+                    <input type="radio" value=2 name="10"/>
+                    <input type="radio" value=3 name="10" checked/>
+                    <input type="radio" value=4 name="10"/>
+                    <input type="radio" value=5 name="10"/>
+                    <span>매우 그렇다.</span>
+                </div>
+
+                <div class="question">
+                    <p>질문 11 : 급한 용건으로 인해 외출을 해야 하는 상황이지만, 코로나바이러스가 걱정돼서 외출을 하지 않은 적이 있으십니까?</p>   
+                </div>
+                <div class="Q_11" type="radiogroup">
+                    <br>
+                    <span>전혀 아니다.</span>
+                    <input type="radio" value=1 name="11"/>
+                    <input type="radio" value=2 name="11"/>
+                    <input type="radio" value=3 name="11" checked/>
+                    <input type="radio" value=4 name="11"/>
+                    <input type="radio" value=5 name="11"/>
+                    <span>매우 그렇다.</span>
+                </div>
+
+                <div class="question">
+                    <p>질문 12 : 대중교통 내에서 5인 이하의 인원과 동승 할 때, 타인의 비말과 타액이 튈까 염려되어 몸을 움츠린 적이 있으십니까?</p>
+                </div>
+                <div class="Q_12" type="radiogroup">
+                    <br>
+                    <span>전혀 아니다.</span>
+                    <input type="radio" value=1 name="12"/>
+                    <input type="radio" value=2 name="12"/>
+                    <input type="radio" value=3 name="12" checked/>
+                    <input type="radio" value=4 name="12"/>
+                    <input type="radio" value=5 name="12"/>
+                    <span>매우 그렇다.</span>
+                </div>
+                <button type="submit" id="button">전송</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

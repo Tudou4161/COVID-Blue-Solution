@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if cluster_integer == 1 %}
+        <h1> 마음방역 3단계 입니다. </h1>
+    {% elif cluster_integer == 2 %}
+        <h1> 마음방역 2단계 입니다. </h1>
+    {% elif cluster_integer == 0 %}
+        <h1> 마음방역 1단계 입니다. </h1>
+    {% endif %}
+
+    <div>
+        {% for x in contents_list %}
+        <p>
+            {{x}}
+        </p>
+        {% endfor %}
+    </div>
+</body>
+</html>

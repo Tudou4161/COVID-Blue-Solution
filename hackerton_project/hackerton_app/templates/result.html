@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID19 - 마음방역 솔루션</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <style>
+        @import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+        @import url(//fonts.googleapis.com/earlyaccess/hanna.css );
+        .MIL p{
+            font-family: 'Nanum Pen Script', cursive;
+            font-size: 30px;
+        }
+        .MIL h4{
+            font-family: 'Hanna', sans-serif;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="covid_stress_result">
+        <div class="header">
+            <div class="header_text">
+                COVID19 - 마음방역 솔루션 : 마음방역 필요 {{immunity_level}}단계입니다.
+            </div>
+        </div>
+    </div>
+    <div class="mental_immunity_level">
+        <div class="MIL">
+            {% if immunity_level == 1 %}
+                <h3> 마음방역 필요 1단계 입니다. </h3>
+                <h4 style="color: green;"> 경미한 수준의 불안감을 느끼고 계십니다. </h4>
+                <p>감염 위기 상황에서 불안은 지극히 정상적인 반응입니다.
+                    불안은 순기능도 있습니다. 
+                    마스크를 쓰고, 손을 자주 씻는 등 위험을 피할 수 있습니다.
+                    하지만 자신의 감정과 몸의 반응을 제대로 살피지 않는다면,
+                    언제든지 마음방역 단계가 높아질 수 있습니다. 
+                    따라서, 가벼운 유산소운동이나 집에서 할 수 있는
+                    취미를 찾아보세요. 
+                    유튜브에서 명상 영상을 찾아보는 것도 좋습니다.</p>
+            {% elif immunity_level == 2 %}
+                <h3> 마음방역 필요 2단계 입니다. </h3>
+                <h4 style="color: orangered;"> 조금 위험한 수준의 불안감과 우울함을 느끼고 계십니다.</h4>
+                <p>감염병 위험 상황에서 불안감과 우울함은
+                    대부분의 사람들이 느끼고 있는 증상입니다. 
+                    하지만 정도가 지나치면 삶의 의욕을 떨어뜨릴만큼
+                    우울감을 느끼실 수도 있습니다. 아래 이미지를 클릭하시면, 상담기관 링크를 확인하실 수 있습니다.
+                    마음을 열어놓고 허심탄회하게 상담을 받아보셨으면 좋겠습니다. 
+                    감염에 대한 불안은 끊임없이 정보를 추구하게 합니다. 
+                    집단감염 사례들을 보며 분노를 느끼실 수도 있습니다. 그러나 그러한 정보들을 접하면 접할수록 
+                    스트레스를 가중하고 이성적인 판단을 어렵게 합니다. 따라서 정보의 선별에 우선순위를 두어 질병관리본부에서
+                    제공하는 정보에 집중하고 SNS와 뉴스를 시간을 정해놓고 접할 수 있도록 정하는 것을 추천드립니다.
+                    혹은 아래의 영상들을 참고하면서 심리적 안정을 얻어가셨으면 좋겠습니다.
+                    </p>
+            {% elif immunity_level == 3 %}
+                <h3> 마음방역 필요 3단계 입니다. </h3>
+                <h4 style="color: darkred;"> 매우 위험한 수준의 불안감과 우울함을 느끼고 계십니다. </h4>
+                <p>최근에 극도로 우울한 감정을 느끼셨거나, 코로나 관련해서 극심한 
+                    분노를 표출하신 적이 있으셨나보군요. 우울함은 신체변화로 이어집니다. 정신적 스트레스는 신체적 질병으로 번질 수 있습니다.
+                    고객님은 현재 전문 상담가와의 상담이 필요하다고 판단됩니다. 극심한 분노와 우울은 이성을 끈을 놓게합니다. 
+                    지금이라도 늦지 않았으니 해결할 수 있는 방법을 같이 찾아봅시다. 
+                    따라서 바로 아래의 이미지를 클릭하여 도움을 요청할 기관을 찾아보세요. 
+                    또한 고객님의 우울감과 분노를 조금 누그러뜨릴 수 있는 심리안정 영상컨텐츠를 아래에 추천해두었으니 들어가서 시청하시면
+                    도움이 될 것이라 생각합니다. </p>
+            {% endif %}
+        </div>
+    </div>
+    <div class="img_box">
+        <div class="img_box_left">
+            <img src="{% static '정부카드.PNG'%}">
+        </div>
+        <div class="img_box_right">
+            <img src="{% static '정신건강 서비스 제공 기관 연락처.png'%}">
+            <a href="http://covid19seoulmind.org/#"><img src="{% static '서울시COVID19심리지원단.png'%}"></a>
+            <a href="http://www.moef.go.kr/sns/2020/emgncEcnmyMtg.do"><img src="{% static '코로나19경제지원.png'%}"></a>
+        </div>
+    </div>
+
+    <div class="youtube_box">
+        {% for href in href_list %}
+            <iframe src={{href}} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        {% endfor %}
+    </div>
+    <div class="footer">
+        <div class="footer_text">
+            Copyright © 광주 인공지능사관학교 MMUP TEAM. 2020
+        </div>
+    </div>
+</body>
+</html>
